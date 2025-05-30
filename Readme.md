@@ -119,12 +119,6 @@ npm run dev
 
 ---
 
-## 📸 Screenshots
-
-> *Optional: Add screenshots of login/register/dashboard if required.*
-
----
-
 ## 👨‍💻 Author
 
 * **Shubham Kumar**
