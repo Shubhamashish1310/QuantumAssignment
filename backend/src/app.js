@@ -2,10 +2,16 @@ import express from 'express';
 import serverConfig from './config/server.js';
 import connectDB from './config/db.js';
 import router from './routes/routes.js';
-import dotenv from 'dotenv';
+import cors from 'cors';
 
 const PORT = serverConfig.PORT;
 const app = express();
+
+app.use(cors({
+    origin: 'http://localhost:5173', // Update this to your frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true // Allow cookies to be sent with requests
+}));
 app.get('/',(req,res)=>{
     res.json({
         message:'working',
