@@ -1,10 +1,14 @@
 import User from "../models/User.js";
 
+
+
 export default {
   async create(userDTO) {
     return User.create(userDTO);
   },
-
+async findAll() {
+  return User.find({}, "-password"); // exclude password
+},
   async findByEmail(email, { withPassword = false } = {}) {
     // `select("+password")` only when caller explicitly needs the hash
     const query = User.findOne({ email: email.toLowerCase() });

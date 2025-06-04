@@ -1,5 +1,14 @@
 import authService from "../services/service.js";
+import userRepo from "../repositories/repository.js";
 
+export const getAllUsers = async (req, res, next) => {
+  try {
+    const users = await userRepo.findAll(); // implement this
+    res.json(users);
+  } catch (err) {
+    next(err);
+  }
+};
 export const register = async (req, res, next) => {
   try {
     const { name, dob, email, password } = req.body;
